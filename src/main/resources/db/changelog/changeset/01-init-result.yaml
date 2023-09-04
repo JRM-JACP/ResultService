@@ -1,0 +1,52 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-result
+      author: Denis
+      changes:
+        - createTable:
+            tableName: result
+            columns:
+              - column:
+                  name: taskId
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    unique: true
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: userId
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: competitionId
+                  type: bigint
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: result
+                  type: varchar(30)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: time
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: CPU
+                  type: varchar(10)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: MEM
+                  type: varchar(10)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: score
+                  type: varchar(2)
+                  constraints:
+                    nullable: false
